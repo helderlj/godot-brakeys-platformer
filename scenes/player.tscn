@@ -1,7 +1,8 @@
-[gd_scene load_steps=26 format=3 uid="uid://bfaoolu532yxq"]
+[gd_scene load_steps=27 format=3 uid="uid://bfaoolu532yxq"]
 
 [ext_resource type="Texture2D" uid="uid://ck2n1nvjv54a5" path="res://assets/sprites/knight.png" id="1_cgoow"]
 [ext_resource type="Script" path="res://scenes/player.gd" id="1_jil7t"]
+[ext_resource type="AudioStream" uid="uid://ce21a8apaubbo" path="res://assets/sounds/jump.wav" id="3_ibpro"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wvwck"]
 atlas = ExtResource("1_cgoow")
@@ -188,5 +189,9 @@ shape = SubResource("CircleShape2D_mi25t")
 
 [node name="Coyote" type="Timer" parent="."]
 wait_time = 0.2
+
+[node name="Jump" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_ibpro")
+volume_db = -6.69
 
 [connection signal="timeout" from="Coyote" to="." method="_on_coyote_timeout"]

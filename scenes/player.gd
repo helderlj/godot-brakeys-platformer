@@ -9,6 +9,7 @@ var coyote_time = 1
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var coyote_timer: Timer = $Coyote
+@onready var jump: AudioStreamPlayer2D = $Jump
 
 
 func _physics_process(delta: float) -> void:
@@ -27,6 +28,7 @@ func _physics_process(delta: float) -> void:
 	if can_jump:
 		if Input.is_action_just_pressed("jump") and can_jump:
 			velocity.y = JUMP_VELOCITY
+			jump.play()
 			can_jump = false
 
 		
